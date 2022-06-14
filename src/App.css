@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,6 +28,77 @@
 .App-link {
   color: #61dafb;
 }
+
+
+
+#inputbox, #outputbox, #input{
+  margin: auto;
+  margin-top: 50px;
+  display:block;
+}
+
+#inputheader, #outputheader {
+  height: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border:solid #282c34 2px;
+}
+
+#inputheader{
+  background-color:#cfd1d4;
+  max-width: 500px;
+  min-width:500px;
+}
+
+#outputheader {
+  background-color:#e6e6e6;
+  width: 80vw;
+  margin-top: 20px;
+}
+
+
+h3 {
+  margin:4px 10px;
+  color:#1c1c1c;
+}
+
+#icon {
+  margin: auto 5px
+}
+
+textarea{
+  background-color: #e6e6e6;
+  max-width: 500px;
+  min-width:500px;
+  margin: auto;
+  display: block;
+  border: none;
+  outline-color: black;
+}
+
+
+
+#outputtext{
+  background-color: white;
+  width: 80vw;
+  min-height:200px;
+  margin: auto;
+  display: block;
+  border: solid #282c34 1px;
+  overflow-wrap: break-word;
+  overflow:scroll;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  color: #1c1c1c;
+}
+
+
+
+
 
 @keyframes App-logo-spin {
   from {
