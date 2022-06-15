@@ -1,8 +1,6 @@
 
 import './App.css';
 import React from 'react';
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
 import { FaWindowMaximize, FaWindowMinimize } from 'react-icons/fa';
 import Markdown from 'marked-react';
 import Lowlight from 'react-lowlight'
@@ -19,6 +17,10 @@ function App() {
   return (
     <div>
       <Input />
+
+        <script src="bundle.js"></script>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
     </div>
   );
 }
@@ -103,14 +105,13 @@ class InputBox extends React.Component {
     super(props)
     this.state = {
       input: defaultinput,
-      output: <Markdown renderer={renderer} value={defaultinput} /> 
+      output: <Markdown renderer={renderer} options={{gfm: true, breaks: true}} value={defaultinput} /> 
     };
     this.handleChange = this.handleChange.bind(this);
   };
   handleChange = (event) => {
     let text = event.target.value;
-    text = <ReactMarkdown remarkPlugins={[remarkGfm]}
-    >{text}</ReactMarkdown>;
+    text = <Markdown renderer={renderer} options={{gfm: true, breaks: true}} value={text} /> 
     this.setState({ 
       input: event.target.value,
       output: text 
@@ -150,11 +151,11 @@ class OutputBox extends React.Component {
           <button onClick={this.handleClick} >{this.state.folded ===true? <FaWindowMaximize /> :<FaWindowMinimize />}</button>
         </div>
       </div>
-      <div id="preview">
-      <div id="outputtext" style={style}>
+      
+      <div id="preview" style={style}>
         {this.props.input}
       </div>
-      </div>
+      
     </div>
     )
   }
